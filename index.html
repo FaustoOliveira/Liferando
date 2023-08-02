@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home-Delivery</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png">
+    <link rel="manifest" href="./favicon/site.webmanifest">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" href="style.css">
+    <script src="datenbank.js"></script>
+    <script src="script.js"></script>
+    <script src="template.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Economica:ital,wght@0,400;0,700;1,400;1,700&family=Gotu&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700;1,900&family=Rubik+Distressed&display=swap"
+        rel="stylesheet">
+
+</head>
+
+
+<body onload="renderAllMenus()">
+    <div id="full-side">
+        <!--header-->
+        <div class="header">
+            <div class="logo-headline">
+                <a href="index.html"><img src="./img/home-delivery.svg"></a>
+                <span class="headline">
+                    <a href="index.html">Home Delivery</a>
+                </span>
+            </div>
+
+            <div class="headline-middle">
+                Speisekarte
+            </div>
+
+            <div class="flag-and-menu-icon">
+                <img class="german-flag" onclick="alertTestWebsite()" src="./img/germany.png">
+                <img class="menu-icon" onclick="alertTestWebsite()" src="./img/menu-4-16white.png">
+            </div>
+        </div>
+
+        <!--order page-->
+        <div class="order-page">
+            <div class="menu-page">
+                <div class="header-picture">
+                    <img class="header-img" src="./img/burger-g14bb5a5eb_1920.jpg">
+                    <div class="logo-container">
+                        <img class="logo margin-left" src="./img/burger-and-soda-meal-svgrepo-com.svg">
+                    </div>
+                </div>
+
+                <div class="restaurnt-header-box-shadow">
+                    <div class="restaurant-name margin-left">
+                        <span>The Food Temple</span>
+                        <div class="icons-container">
+                            <img onclick="openInfoTab()" src="./img/info-icon.png">
+                            <img onclick="fillHeartIcon()" src="./img/heart-white.png" id="heart-icon">
+                        </div>
+                    </div>
+
+                    <div class="rating-area margin-left">
+                        <img src="./img/star-2-24.png">
+                        <img src="./img/star-2-24.png">
+                        <img src="./img/star-2-24.png">
+                        <img src="./img/star-2-24.png">
+                        <img src="./img/star-2-24.png">
+                        <span class="rating-number" onclick="alertTestWebsite()">8920 Bewertungen</span>
+                    </div>
+
+                    <div class="info-area margin-left">
+                        <div class="info-area-margin">
+                            <img src="./img/time-8-16.png">
+                            45 Minuten
+
+                        </div>
+                        <div class="info-area-margin">
+                            &#8226;
+                            <img class="bicycle-icon" src="./img/icons8-scooter-50.png">
+                            4,00€
+                        </div>
+                        <div class="info-area-margin">
+                            &#8226;
+                            <img class="bag-icon" src="./img/icons8-paper-bag-64.png">
+                            Min. 20€
+                        </div>
+                    </div>
+
+                    <div class="food-categorys">
+                        <span class="food-category-span"><a href="#burger-area">Burger</a></span>
+                        <span class="food-category-span"><a href="#salads-area">Salate</a></span>
+                        <span class="food-category-span"><a href="#side-dishes-area">Beilagen</a></span>
+                        <span class="food-category-span"><a href="#sauces-area">Saucen</a></span>
+                        <span class="food-category-span"><a href="#drinks-area">Getränke</a></span>
+                        <span class="food-category-span"><a href="#dessert-area">Dessert</a></span>
+                    </div>
+                </div>
+
+
+                <!--burger menus-->
+                <div class="general-menu margin-left" id="burger-area"></div>
+
+                <!--salad menus-->
+
+                <div class="general-menu margin-left" id="salads-area"> </div>
+
+                <!--Beilagen menus-->
+                <div class="general-menu margin-left" id="side-dishes-area"></div>
+
+                <!--Sauces menus-->
+                <div class="general-menu margin-left" id="sauces-area"></div>
+
+                <!--drinks menus-->
+                <div class="general-menu margin-left" id="drinks-area"></div>
+
+                <!--dessert menu-->
+                <div class="general-menu margin-left" id="dessert-area"></div>
+            </div>
+
+            <!---shopping basket-->
+            <div class="shopping-basket" id="shopping-basket">
+                <div class="shopping-basket-headline">
+                    <span>Warenkorb</span>
+                </div>
+                <div class="shopping-area" id="shopping-area">
+                    <img class="shopping-basket-img" src="./img/shopping-basket.svg">
+                    <span class="fill-basket">Fülle deinen Warenkorb</span>
+                    <span class="fill-basket-text">Füge deine Lieblingsgerichte zum Warenkorb<br> hinzu und bestelle
+                        dein Essen
+                    </span>
+                </div>
+                <div id="text-low-final-sum">
+                    <!--filled with java script-->
+                </div>
+                <div class="sum-area" id="sum-area">
+                    <!--filled with java script-->
+                </div>
+            </div>
+        </div>
+
+        <!--info tab-->
+        <div class="overlay" id="overlay"></div>
+        <div class="info-tab" id="info-tab">
+            <div class="info-tab-headline">
+                <span>Über das Restaurant</span>
+                <img onclick="closeInfoTab()" class="x-mark" src="img/x-mark.png">
+            </div>
+            <div class="scroll-div">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d118554.70344687009!2d-9.157052007327442!3d38.663087286797186!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd19347fe51319d3%3A0x4b98744090bc26d4!2zUGFwJ0HDp8O0cmRh!5e0!3m2!1sde!2sde!4v1668873430689!5m2!1sde!2sde"
+                    width="100%" height="60%" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+                <div class="info-standort">
+                    <img src="./img/time-8-16.png">
+                    <span>Lieferzeiten</span>
+                </div>
+                <div class="opening-days">
+                    <span class="days">
+                        Montag<br>
+                        Dienstag<br>
+                        Mittwoch<br>
+                        Donnerstag<br>
+                        Freitag<br>
+                        Samstag<br>
+                        Sonntag<br>
+                    </span>
+                    <span class="hours">
+                        14:00 - 22:00 Uhr<br>
+                        14:00 - 22:00 Uhr<br>
+                        14:00 - 22:00 Uhr<br>
+                        14:00 - 22:00 Uhr<br>
+                        14:00 - 22:00 Uhr<br>
+                        14:00 - 22:00 Uhr<br>
+                        geschlossen
+                    </span>
+                </div>
+                <div class="info-standort">
+                    <img class="deliver-icon" src="./img/icons8-scooter-50.png">
+                    <span>Lieferkosten</span>
+                </div>
+                <div class="opening-days">
+                    <span class="days">
+                        Mindestbestellwert<br>
+                        Lieferkosten
+                    </span>
+                    <span class="hours">
+                        15,00€<br>
+                        &nbsp;&nbsp;4,00€
+                    </span>
+                </div>
+
+            </div>
+        </div>
+
+        <!--footer-->
+        <div class="footer">
+            <div class="footer-first-container">
+                <span class="footer-span">
+                    <a href="agb.html">AGB</a>
+                </span>
+                <span class="footer-span">
+                    <a href="datenschutz.html">Datenschutzerklärung</a>
+                </span>
+                <span class="footer-span">
+                    <a href="impressum.html">Impressum</a>
+                </span>
+            </div>
+
+            <div class="footer-second-container">
+                <span>© 2022 Home-Delivery</span>
+            </div>
+        </div>
+
+        <!--order button for responsive-->
+        <div class="button-responsive-div">
+            <button onclick="showResponsiveShoppingBasket()" class="button-responsive" id="button-responsive">
+                <span>Warenkorb</span>
+                <span class="responsive-button-price" id="responsive-button-price"></span>
+            </button>
+        </div>
+
+        <!--responsive shopping basket-->
+        <div class="responsive-shopping-basket" id="responsive-shopping-basket">
+            <div class="div-basket-xmark">
+                <img onclick="closeResponsiveShoppingBasket()" class="basket-xmark" src="img/x-mark.png">
+            </div>
+            <div class="headline-responsive-basket">
+                <h2>Warenkorb</h2>
+            </div>
+            <div class="shopping-area-responsive" id="shopping-area-responsive">
+                <img class="shopping-basket-img" src="./img/shopping-basket.svg">
+                <span class="fill-basket">Fülle deinen Warenkorb</span>
+                <span class="fill-basket-text">Füge deine Lieblingsgerichte zum Warenkorb<br> hinzu und bestelle dein
+                    Essen
+                </span>
+            </div>
+            <div id="text-low-final-sum-responsive">
+                <!--filled with java script-->
+            </div>
+            <div class="sum-area-responsive" id="sum-area-responsive">
+                <!--filled with java script-->
+            </div>
+        </div>
+
+
+    </div>
+</body>
+
+</html>
